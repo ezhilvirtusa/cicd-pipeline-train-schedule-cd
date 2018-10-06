@@ -15,14 +15,14 @@ pipeline {
                branch 'master'
                    }
                steps{
-                withCredentials([usernamepassword(credentialsId: 'webserverlogin',usernamevariable:'USERNAME',passwordvariable:'PASSWORD')]){
+                withCredentials([usernamePassword(credentialsId: 'webserverlogin',usernameVariable:'USERNAME',passwordVariable:'PASSWORD')]){
                     sshPublisher(
                         publishers: [
                           sshPublisherDesc(
                               configName: 'stage',
                               sshcredentials: [
                                usernname:"$USERNAME", 
-                               encryptedpassword:"$PASSWORD"
+                               encryptedPassphrase:"$PASSWORD"
                               ],
                               transfers: [
                                   sshTransfer(
