@@ -10,7 +10,7 @@ pipeline {
             }
         }
         stage('Deploy stage'){
-            steps {                
+                      
               when {
                branch 'master'
                    }
