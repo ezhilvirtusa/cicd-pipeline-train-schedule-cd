@@ -15,7 +15,7 @@ pipeline {
                branch 'master'
                    }
                steps{
-                withcredentials([usernamepassword(credentialsId: 'webserverlogin',usernamevariable:'USERNAME',passwordvariable:'PASSWORD')]){
+                withCredentials([usernamepassword(credentialsId: 'webserverlogin',usernamevariable:'USERNAME',passwordvariable:'PASSWORD')]){
                     sshPublisher(
                         publishers: [
                           sshPublisherDesc(
